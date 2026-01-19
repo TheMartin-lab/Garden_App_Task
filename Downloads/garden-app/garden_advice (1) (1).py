@@ -25,12 +25,11 @@ def get_plant_advice(plant_type):
     Returns:
         str: Advice string for the plant type.
     """
-    if plant_type == "flower":
-        return "Use fertiliser to encourage blooms."
-    elif plant_type == "vegetable":
-        return "Keep an eye out for pests!"
-    else:
-        return "No advice for this type of plant."
+    advice_dict = {
+        "flower": "Use fertiliser to encourage blooms.",
+        "vegetable": "Keep an eye out for pests!"
+    }
+    return advice_dict.get(plant_type, "No advice for this type of plant.")
 
 def main():
     """
