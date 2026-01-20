@@ -68,8 +68,20 @@ def main():
     print("Welcome to the Garden Advice Program!")
     
     # User interaction: Get input for season and plant type
-    season = input("Enter the current season (summer, winter, spring, autumn): ").strip().lower()
-    plant_type = input("Enter the plant type (flower, vegetable, herb, tree): ").strip().lower()
+    valid_seasons = ["summer", "winter", "spring", "autumn"]
+    valid_plants = ["flower", "vegetable", "herb", "tree"]
+
+    season = ""
+    while season not in valid_seasons:
+        season = input(f"Enter the current season ({', '.join(valid_seasons)}): ").strip().lower()
+        if season not in valid_seasons:
+            print(f"Invalid season. Please choose from: {', '.join(valid_seasons)}")
+
+    plant_type = ""
+    while plant_type not in valid_plants:
+        plant_type = input(f"Enter the plant type ({', '.join(valid_plants)}): ").strip().lower()
+        if plant_type not in valid_plants:
+            print(f"Invalid plant type. Please choose from: {', '.join(valid_plants)}")
     
     print("\n--- Gardening Advice ---")
     advice = get_advice(season, plant_type)
