@@ -38,4 +38,18 @@ I have already completed the local development steps for these issues:
 - [x] Create branch `refactor/dictionary-lookup`
 - [x] Implement changes
 - [x] Commit and push to GitHub
-- [ ] **Action Required:** Open Pull Request (Link: https://github.com/TheMartin-lab/garden-app/pull/new/refactor/dictionary-lookup)
+- [x] Open Pull Request (Merged)
+
+---
+
+## Issue 3: Add Interactive Loop
+
+**Title:** Allow user to query multiple times
+**Description:**
+Add a loop to the main program so the user can ask for advice multiple times without restarting the program.
+
+**Workflow Status:**
+- [x] Create branch `feature/interactive-loop`
+- [x] Implement changes
+- [x] Commit and push to GitHub
+- [ ] **Action Required:** Open Pull Request (Link: https://github.com/TheMartin-lab/garden-app/pull/new/feature/interactive-loop)

@@ -67,29 +67,36 @@ def main():
     """
     print("Welcome to the Garden Advice Program!")
     
-    # User interaction: Get input for season and plant type
-    valid_seasons = ["summer", "winter", "spring", "autumn"]
-    valid_plants = ["flower", "vegetable", "herb", "tree"]
+    while True:
+        # User interaction: Get input for season and plant type
+        valid_seasons = ["summer", "winter", "spring", "autumn"]
+        valid_plants = ["flower", "vegetable", "herb", "tree"]
 
-    season = ""
-    while season not in valid_seasons:
-        season = input(f"Enter the current season ({', '.join(valid_seasons)}): ").strip().lower()
-        if season not in valid_seasons:
-            print(f"Invalid season. Please choose from: {', '.join(valid_seasons)}")
+        season = ""
+        while season not in valid_seasons:
+            season = input(f"\nEnter the current season ({', '.join(valid_seasons)}): ").strip().lower()
+            if season not in valid_seasons:
+                print(f"Invalid season. Please choose from: {', '.join(valid_seasons)}")
 
-    plant_type = ""
-    while plant_type not in valid_plants:
-        plant_type = input(f"Enter the plant type ({', '.join(valid_plants)}): ").strip().lower()
-        if plant_type not in valid_plants:
-            print(f"Invalid plant type. Please choose from: {', '.join(valid_plants)}")
-    
-    print("\n--- Gardening Advice ---")
-    advice = get_advice(season, plant_type)
-    print(advice)
-    
-    print("\n--- Plant Recommendations ---")
-    recommendation = recommend_plants(season)
-    print(f"Recommended plants for {season}: {recommendation}")
+        plant_type = ""
+        while plant_type not in valid_plants:
+            plant_type = input(f"Enter the plant type ({', '.join(valid_plants)}): ").strip().lower()
+            if plant_type not in valid_plants:
+                print(f"Invalid plant type. Please choose from: {', '.join(valid_plants)}")
+        
+        print("\n--- Gardening Advice ---")
+        advice = get_advice(season, plant_type)
+        print(advice)
+        
+        print("\n--- Plant Recommendations ---")
+        recommendation = recommend_plants(season)
+        print(f"Recommended plants for {season}: {recommendation}")
+
+        # Ask user if they want to continue
+        cont = input("\nDo you want to get advice for another plant? (yes/no): ").strip().lower()
+        if cont != 'yes':
+            print("Happy gardening! Goodbye.")
+            break
 
 if __name__ == "__main__":
     main()
